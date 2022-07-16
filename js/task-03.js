@@ -13,9 +13,13 @@ const images = [
     },
   ];
 
-const list = document.querySelector(".gallery");
-const markup = images
-  .map((image) => `<li class="gallery-item">${image.url}</li>`)
-  .join("");
+const newGallery = document.querySelector(".gallery");
+newGallery.style.display = "flex";
+newGallery.style.gap = "20px";
+newGallery.style.listStyle = "none";
+const newGalleryImages = images
+  .forEach(e => {
+    newGallery.insertAdjacentHTML("afterbegin", `<li class="picture"><img src="${e.url}" alt="${e.alt}" width="300" height="200"/></li>`);
+    });
 
-list.insertAdjacentHTML("beforeend", markup);
+    // ZROBIONE
