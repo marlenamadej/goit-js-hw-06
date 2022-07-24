@@ -13,13 +13,9 @@ const images = [
     },
   ];
 
-const newGallery = document.querySelector(".gallery");
-newGallery.style.display = "flex";
-newGallery.style.gap = "20px";
-newGallery.style.listStyle = "none";
-const newGalleryImages = images
-  .forEach(e => {
-    newGallery.insertAdjacentHTML("afterbegin", `<li class="picture"><img src="${e.url}" alt="${e.alt}" width="300" height="200"/></li>`);
-    });
-
+  const newGallery = document.querySelector(".gallery");
+  const imageList = images.map((image) => `<li><img src = ${image.url} alt = ${image.alt} width = 400 height = 300></img></li>`);  
+  newGallery.insertAdjacentHTML("afterbegin", imageList);
+    newGallery.style.display = "flex";
+    newGallery.style.listStyle = "none";
     // ZROBIONE
