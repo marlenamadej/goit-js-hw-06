@@ -8,14 +8,15 @@ const ingredients = [
   ];
 
 
-ingredients.forEach(function (ingredient, index) {
-  const list = document.querySelector("#ingredients");
-  const item = document.createElement("li");
-  console.log(item);
-  item.textContent=`${ingredient}`;
-  item.classList.add('item');
-  console.log(item.textContent);
-  list.append(item);
-});
+  const ul = document.querySelector("ul#ingredients");
+  const item = () => {
+    for (const ingredient of ingredients) {
+      const liElem = document.createElement("li");
+      liElem.textContent = ingredient;
+      liElem.classList.add("item");
+      ul.append(liElem);
+    }
+   };
+  console.log(item());
 
 // ZROBIONE
